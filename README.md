@@ -3,6 +3,16 @@
 ## Synopsis
 Demonstrating an Angular 7 app using Lazy Loaded Modules, storing data via a NestJS API using a MongoDB Docker Container.
 
+I also added OpenAPI (Swagger) for your pleasure :)
+
+**Ommisions (for the sake of time)**
+
+- Ideally, I would turn the API into multiple microservices to deal with there own concerns. For the sake of time, I have put them into one API.
+- There should be an IAM service so that we can use a Bearer token to communicate with the API
+- I want the IAM, Mongo, APIs and App to run in separate containers so that they could be orchastrated with something like Kubernetes.
+- Documentation: I can install and run something like Compodoc which will scan your files and create auto documentation.
+
+
 
 
 ## How to Run
@@ -17,7 +27,7 @@ First we have to start the Mongo Docker container. The easiest way is to run `ma
 
 **API**
 
-Now we are ready to server the API. Go the folder `heroes-api` and run `npm run start:dev`. If you rather use `yarn`, you know the drill. The OpenAPI is visibile on `http://localhost:3000`.
+Now we are ready to server the API. Go the folder `heroes-api` and run `npm run start`. If you rather use `yarn`, you know the drill. The OpenAPI is visibile on `http://localhost:3000/api`.
 
 **App**
 
