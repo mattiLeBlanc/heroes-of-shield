@@ -1,0 +1,15 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <div fxLayout="row" fxLayoutAlign="space-between center">
+        <div>
+          Heroes
+        </div>
+        <button mat-button color="primary" (click)="addHero()">Add Hero</button>
+      </div>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <app-hero-list [heroes]="heroes$ | async"></app-hero-list>
+  </mat-card-content>
+</mat-card>

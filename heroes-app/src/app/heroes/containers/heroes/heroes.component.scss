@@ -1,0 +1,8 @@
+:host {
+  mat-card /deep/ {
+    .mat-card-header-text {
+      width: 100%;
+    }
+  }
+
+}
