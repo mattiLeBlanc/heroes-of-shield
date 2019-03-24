@@ -8,8 +8,7 @@ import { HeroesService } from './services/heroes.service';
 
 import * as fromComponents from './components';
 import * as fromContainers from './containers';
-import { DialogComponent } from '../common/components';
-import { DialogAddHeroComponent } from './components/dialog-containers/dialog-add-hero.component';
+import { AddHeroDialogComponent } from './components/add-hero-dialog/add-hero-dialog.component';
 
 @NgModule({
   imports: [
@@ -25,14 +24,13 @@ import { DialogAddHeroComponent } from './components/dialog-containers/dialog-ad
   declarations: [
     ...fromComponents.components,
     ...fromContainers.containers,
-    DialogAddHeroComponent,
+    AddHeroDialogComponent,
   ],
   providers: [
     HeroesService
   ],
   entryComponents: [
-    DialogComponent,
-    DialogAddHeroComponent,
+    AddHeroDialogComponent,
   ]
 })
 export class HeroesModule { }

@@ -18,4 +18,8 @@ export class HeroesService {
     return this.http.get<Hero[]>(this.url);
   }
 
+  add(hero: Hero) {
+    return this.http.post(this.url, hero);
+  }
+
 }

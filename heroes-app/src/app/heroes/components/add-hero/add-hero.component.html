@@ -1,1 +1,13 @@
-<div>Add Hero</div>
+<div [formGroup]="form" fxLayout="column">
+
+  <mat-form-field>
+    <input matInput placeholder="Name" formControlName="name">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput type="number" splaceholder="Age" formControlName="age">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Super power" formControlName="superPower">
+  </mat-form-field>
+
+</div>

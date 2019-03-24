@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { HeroesService } from '../../services/heroes.service';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { Hero } from '../../../models/heroes.model';
 import { MatDialog } from '@angular/material';
-import { DialogComponent } from 'src/app/common/components';
-import { DialogAddHeroComponent } from '../../components/dialog-containers/dialog-add-hero.component';
+import { AddHeroDialogComponent } from '../../components/add-hero-dialog/add-hero-dialog.component';
+import { takeUntil } from 'rxjs/operators';
 
 
 @Component({
@@ -12,8 +12,9 @@ import { DialogAddHeroComponent } from '../../components/dialog-containers/dialo
   templateUrl: './heroes.component.html',
   styleUrls: ['./heroes.component.scss']
 })
-export class HeroesComponent implements OnInit {
-  private readonly heroes$: Observable<Hero[]>;
+export class HeroesComponent implements OnDestroy {
+  private heroes$: Observable<Hero[]>;
+  private onDestroy = new Subject();
 
   constructor(
     private heroesService: HeroesService,
@@ -22,19 +23,23 @@ export class HeroesComponent implements OnInit {
     this.heroes$ = heroesService.get();
   }
 
-  ngOnInit() {
-
+  ngOnDestroy() {
+    this.onDestroy.next();
+    this.onDestroy.complete();
   }
 
   addHero() {
-    const dialogRef = this.dialog.open(DialogComponent, {
+    const dialogRef = this.dialog.open(AddHeroDialogComponent, {
       width: '500px',
-      data: {title: 'Add a new hero', component: DialogAddHeroComponent }
+      data: {title: 'Add a new hero' }
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      // this.animal = result;
+      this.heroesService.add(result)
+        .pipe(takeUntil(this.onDestroy))
+        .subscribe(() => {
+          this.heroes$ = this.heroesService.get();
+        });
     });
   }
 }
