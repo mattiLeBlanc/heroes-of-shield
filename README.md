@@ -7,6 +7,7 @@ I also added OpenAPI (Swagger) for your pleasure :)
 
 **Ommisions (for the sake of time)**
 
+- I want to enhance the app to broadcast Crisises and then Heroes can be send on a Mission to deal with the crisis.
 - Ideally, I would turn the API into multiple microservices to deal with there own concerns. For the sake of time, I have put them into one API.
 - There should be an IAM service so that we can use a Bearer token to communicate with the API
 - I want the IAM, Mongo, APIs and App to run in separate containers so that they could be orchastrated with something like Kubernetes.
