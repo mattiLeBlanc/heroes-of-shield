@@ -1,9 +1,10 @@
-import { Controller, Get, Post, Body, Param } from '@nestjs/common';
+import { Controller, Get, Post, Body } from '@nestjs/common';
 import { CrisisesService } from './crisises.service';
 import { CreateCrisisDto } from './dto/create-crisis.dto';
 import { Crisis } from './interfaces/crisis.interface';
-import { ApiResponse } from '@nestjs/swagger';
+import { ApiResponse, ApiUseTags } from '@nestjs/swagger';
 
+@ApiUseTags('crisises')
 @Controller('crisises')
 export class CrisisesController {
   constructor(private readonly crisisesService: CrisisesService) {}

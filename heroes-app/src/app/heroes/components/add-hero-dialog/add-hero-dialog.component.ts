@@ -20,7 +20,7 @@ export class AddHeroDialogComponent {
     @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
 
   cancel(): void {
-    this.dialogRef.close();
+    this.dialogRef.close(false);
   }
 
   newHero(formRef: FormGroup) {

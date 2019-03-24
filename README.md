@@ -13,6 +13,7 @@ I also added OpenAPI (Swagger) for your pleasure :)
 - I want the IAM, Mongo, APIs and App to run in separate containers so that they could be orchastrated with something like Kubernetes.
 - Documentation: I can install and run something like Compodoc which will scan your files and create auto documentation.
 - Extend OpenAPI documentation
+- Add Unit Testing!!! (test will fail currently)
 
 ## How to Run
 

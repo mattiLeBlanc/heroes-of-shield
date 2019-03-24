@@ -7,6 +7,7 @@ import { takeUntil } from 'rxjs/operators';
 @Component({
   selector: 'app-add-hero',
   templateUrl: './add-hero.component.html',
+  styleUrls: ['./add-hero.component.scss']
 })
 export class AddHeroComponent implements OnDestroy, OnInit {
   @Output() hero = new EventEmitter();
