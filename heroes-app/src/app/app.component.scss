@@ -5,5 +5,11 @@
       font-size: 30px;
       height: 30px;
     }
+    .mat-button.active /deep/ {
+      span {
+        border-bottom: 2px solid #fff;
+        padding-bottom: 3px;
+      }
+    }
   }
 }
