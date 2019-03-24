@@ -17,6 +17,10 @@ I also added OpenAPI (Swagger) for your pleasure :)
 
 ## How to Run
 
+**Prerequisites**
+
+You will have to have `docker` and `docker-compose` installed, `node 8+`, `npm/yarn`.
+
 First do `make up` which will install all the `npm` packages for both the App and the API.
 
 Currently, I haven't had time to create Dockerised build of the App and the API, so if you want to view the app you will have to serve the App and API manually.
