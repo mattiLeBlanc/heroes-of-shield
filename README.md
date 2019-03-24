@@ -12,9 +12,7 @@ I also added OpenAPI (Swagger) for your pleasure :)
 - There should be an IAM service so that we can use a Bearer token to communicate with the API
 - I want the IAM, Mongo, APIs and App to run in separate containers so that they could be orchastrated with something like Kubernetes.
 - Documentation: I can install and run something like Compodoc which will scan your files and create auto documentation.
-
-
-
+- Extend OpenAPI documentation
 
 ## How to Run
 
